@@ -6,6 +6,13 @@ void IO::ClearScreen()
 	PrintLn(30);
 }
 
+void IO::PrintSimplePrompt(std::string str)
+{
+	ClearScreen();
+	PrintLn(str);
+	EnterToContinue();
+}
+
 void IO::Print(std::string str)
 {
 	std::cout << str;
@@ -45,5 +52,5 @@ bool IO::PlayAgain()
 void IO::EnterToContinue()
 {
 	PrintLn("Press enter to continue.");
-	std::cin.get();
+	ReadLn();
 }

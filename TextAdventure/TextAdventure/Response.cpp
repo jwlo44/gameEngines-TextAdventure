@@ -7,11 +7,15 @@ void Response::Print()
 	IO::PrintLn(Text);
 	if (PlayerDamage > 0)
 	{
-		IO::PrintLn("You took " + std::to_string(PlayerDamage) + " damage! Owch!");
+		IO::PrintLn("You took " + std::to_string(PlayerDamage) + " damage! Ouch!");
+	}
+	if (PlayerDamage < 0)
+	{
+		IO::PrintLn("You healed " + std::to_string(PlayerDamage) + " damage. Stayin' alive!");
 	}
 	if (EnemyDamage > 0)
 	{
-		IO::PrintLn("You dealt " + std::to_string(PlayerDamage) + " damage!");
+		IO::PrintLn("You dealt " + std::to_string(EnemyDamage) + " damage!");
 	}
 	IO::PrintLn();
 }

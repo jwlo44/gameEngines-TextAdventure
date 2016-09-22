@@ -2,6 +2,7 @@
 #include <string>
 #include <unordered_map>
 class Response;
+// an attack is a prompt where the player can choose an action
 class Attack
 {
 public:
@@ -11,4 +12,5 @@ public:
 	void Print();
 	bool HasResponseFor(std::string action);
 
+	Attack(const std::string& text) : Text(text) {}
 };

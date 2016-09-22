@@ -8,7 +8,7 @@ void Attack::Print()
 	IO::PrintLn("Available Commands:\n");
 	for (auto kvp : Responses)
 	{
-		IO::Print(kvp.first + "\t");
+		IO::Print(kvp.first + ", ");
 	}
 	IO::PrintLn();
 }

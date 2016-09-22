@@ -11,7 +11,7 @@ int main()
 		Enemy* e = TextData::GetFirstEnemy();
 		while (e != nullptr)
 		{
-			e = e->RunChallenge(p);
+			e = e->Fight(p);
 		}
 		playAgain = IO::PlayAgain();
 	}
