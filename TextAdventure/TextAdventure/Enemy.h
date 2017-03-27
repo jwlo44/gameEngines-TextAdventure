@@ -23,8 +23,8 @@ public:
 
 	// reset this enemy's health back to its default value
 	void Reset() { Health = 3; }
-	void Print(Player p, Attack currentAttack);
+	void Print(Player p, const Attack& currentAttack) const;
 private:
-	Attack pickAttack();
+	Attack pickAttack() const;
 	void handleResponse(Player &p, Response response);
 };

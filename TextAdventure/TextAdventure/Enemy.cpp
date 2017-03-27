@@ -55,7 +55,7 @@ Enemy* Enemy::Fight(Player& p)
 
 // choose an attack randomly
 std::default_random_engine generator;
-Attack Enemy::pickAttack() 
+Attack Enemy::pickAttack() const
 {
 	assert( Attacks.size() > 0);
 	std::uniform_int_distribution<int> distribution(0, Attacks.size() - 1);
@@ -63,7 +63,7 @@ Attack Enemy::pickAttack()
 }
 
 // print the response and deal damage
-void Enemy::handleResponse(Player& p, Response response)
+void Enemy::handleResponse(Player& p, const Response response)
 {
 	p.Health -= response.PlayerDamage;
 	Health -= response.EnemyDamage;
@@ -71,7 +71,7 @@ void Enemy::handleResponse(Player& p, Response response)
 	IO::EnterToContinue();
 }
 
-void Enemy::Print(Player p, Attack currentAttack)
+void Enemy::Print(Player p, const Attack& currentAttack) const
 {
 	IO::ClearScreen();
 

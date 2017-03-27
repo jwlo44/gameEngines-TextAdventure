@@ -8,9 +8,9 @@ class Attack
 public:
 	std::string Text;
 	std::unordered_map<std::string, Response> Responses;
-	Response GetResponse(std::string playerAction);
-	void Print();
-	bool HasResponseFor(std::string action);
+	Response GetResponse(const std::string& playerAction) const;
+	void Print() const;
+	bool HasResponseFor(const std::string& action) const;
 
 	Attack(const std::string& text) : Text(text) {}
 };

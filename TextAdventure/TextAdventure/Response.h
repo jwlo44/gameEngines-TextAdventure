@@ -11,8 +11,8 @@ public:
 	int EnemyDamage = 0;
 
 	// print the flavor text and damage text
-	void Print();
+	void Print() const;
 
 	Response() = default;
-	Response(std::string Text, int playerDamage = 0, int enemyDamage = 0);
+	Response(const std::string& Text, int playerDamage = 0, int enemyDamage = 0);
 };

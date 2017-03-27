@@ -6,19 +6,19 @@ void IO::ClearScreen()
 	PrintLn(30);
 }
 
-void IO::PrintSimplePrompt(std::string str)
+void IO::PrintSimplePrompt(const std::string& str)
 {
 	ClearScreen();
 	PrintLn(str);
 	EnterToContinue();
 }
 
-void IO::Print(std::string str)
+void IO::Print(const std::string& str)
 {
 	std::cout << str;
 }
 
-void IO::PrintLn(std::string str)
+void IO::PrintLn(const std::string& str)
 {
 	Print(str);
 	PrintLn();

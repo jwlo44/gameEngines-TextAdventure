@@ -2,7 +2,8 @@
 #include "Enemy.h"
 #include "IO.h"
 #include "Response.h"
-void Attack::Print()
+#include "assert.h"
+void Attack::Print() const
 {
 	IO::PrintLn(Text);
 	IO::PrintLn("Available Commands:\n");
@@ -13,7 +14,7 @@ void Attack::Print()
 	IO::PrintLn();
 }
 
-bool Attack::HasResponseFor(std::string action)
+bool Attack::HasResponseFor(const std::string& action) const
 {
 	std::unordered_map<std::string, Response>::const_iterator found = Responses.find(action);
 	if (found == Responses.end())
@@ -23,7 +24,9 @@ bool Attack::HasResponseFor(std::string action)
 	return true;
 }
 
-Response Attack::GetResponse(std::string action)
+Response Attack::GetResponse(const std::string& action) const
 {
-	return Responses[action];
+	auto found = Responses.find(action);
+	assert(found != Responses.end());
+	return found->second;
 }

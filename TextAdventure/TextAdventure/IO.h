@@ -6,9 +6,9 @@ class IO
 {
 public:
 	static void ClearScreen();
-	static void PrintSimplePrompt(std::string str);
-	static void Print(std::string str);
-	static void PrintLn(std::string str);
+	static void PrintSimplePrompt(const std::string& str);
+	static void Print(const std::string& str);
+	static void PrintLn(const std::string& str);
 	static void PrintLn(int numLines = 1);
 	static std::string ReadLn();
 	static bool PlayAgain();

@@ -1,7 +1,7 @@
 #include "Response.h"
 #include "IO.h"
 
-void Response::Print()
+void Response::Print() const
 {
 	IO::ClearScreen();
 	IO::PrintLn(Text);
@@ -20,7 +20,7 @@ void Response::Print()
 	IO::PrintLn();
 }
 
-Response::Response(std::string text, int playerDamage, int enemyDamage)
+Response::Response(const std::string& text, int playerDamage, int enemyDamage)
 {
 	Text = text;
 	PlayerDamage = playerDamage;
